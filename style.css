@@ -1,7 +1,7 @@
 /* Base body styles */
 body {
     margin: 0;                     /* Removes default margin around the body */
-    padding: 0;                    /* Removes default padding */
+    padding: 0;                  
     min-height: 100vh;
     background-repeat: no-repeat;
     font-family: 'Inter', sans-serif;
@@ -13,15 +13,27 @@ body {
     
 }
 
-html {
-    scroll-behavior: smooth;
-  }
+body {
+    padding-top: 100px; /* 30px (top-bar) + 70px (navbar height) */
+}
 
+html, body {
+    overflow-x: clip !important;  
+}
+  
+
+  
 /* Yellow top strip */
 .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 30px;
     background: #F8C007;
+    z-index: 10000; /* above everything */
 }
+
 /* Make header sticky across all sections */
 header {
     position: sticky;
@@ -37,6 +49,15 @@ header {
     text-transform: none;
     line-height: 1.4;
   }
+
+  .navbar {
+    position: fixed;         
+    top: 30px;               
+    left: 0;
+    right: 0;
+    z-index: 9999;            
+    background-color: white; 
+}
 
 .navbar ul {
     list-style: none;
@@ -1250,4 +1271,3 @@ transition: all 0.5s ease;
   body {
     overflow-x: hidden;
   }
-  
